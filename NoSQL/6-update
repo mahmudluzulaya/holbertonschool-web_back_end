@@ -1,11 +1,11 @@
-// Always update all documents with name "Holberton school"
-// Adds 'address' field with value "972 Mission street"
-// Prints WriteResult for all scenarios (no match, 1 match, or multiple matches)
+// Bütün "Holberton school" adlı sənədləri yeniləyir
+// 'address' sahəsini əlavə edir və dəyərini "972 Mission street" təyin edir
+// Hər vəziyyətdə WriteResult-u çap edir (heç bir uyğunluq, 1 uyğunluq və ya bir neçə uyğunluq)
 
 var result = db.school.updateMany(
-{ name: "Holberton school" },                // Filter documents
-{ $set: { address: "972 Mission street" } }, // Add/update 'address' field
-{ upsert: false }                             // Do not insert if no match
+  { name: "Holberton school" },                 // Yenilənəcək sənədləri filtr edir
+  { $set: { address: "972 Mission street" } },  // 'address' sahəsini əlavə edir/yeniləyir
+  { upsert: false }                              // Uyğunluq yoxdursa yeni sənəd yaratmır
 );
 
-printjson(result);  // Ensures WriteResult is printed for the checker
+printjson(result);  // Checker üçün WriteResult-u çap edir
