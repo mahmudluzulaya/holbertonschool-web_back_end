@@ -1,11 +1,5 @@
-// Bütün "Holberton school" adlı sənədləri yeniləyir
-// 'address' sahəsini əlavə edir və dəyərini "972 Mission street" təyin edir
-// Hər vəziyyətdə WriteResult-u çap edir (heç bir uyğunluq, 1 uyğunluq və ya bir neçə uyğunluq)
-
-var result = db.school.updateMany(
-  { name: "Holberton school" },                 // Yenilənəcək sənədləri filtr edir
-  { $set: { address: "972 Mission street" } },  // 'address' sahəsini əlavə edir/yeniləyir
-  { upsert: false }                              // Uyğunluq yoxdursa yeni sənəd yaratmır
+// Updates all documents with name="Holberton school" to add the address attribute
+db.school.updateMany(
+    { name: "Holberton school" },
+    { $set: { address: "972 Mission street" } }
 );
-
-printjson(result);  // Checker üçün WriteResult-u çap edir
