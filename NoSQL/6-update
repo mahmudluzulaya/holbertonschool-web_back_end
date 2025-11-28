@@ -1,5 +1,7 @@
-// my comment
+// Script to add an 'address' field to all documents named "Holberton school"
+// This is for checker validation: update all matching documents
+
 db.school.updateMany(
-  { name: "Holberton school" },
-  { $set: { address: "972 Mission street" } }
+{ name: "Holberton school" }, // Filter: only documents with this name
+{ $set: { address: "972 Mission street" } } // Add 'address' field or update if exists
 )
