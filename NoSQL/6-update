@@ -1,7 +1,9 @@
-// Update all documents named "Holberton school" to add the 'address' field
-// Checker expects a WriteResult, even if the collection is empty
+// Update all documents with name "Holberton school" and add 'address' field
+// Always outputs WriteResult, even if no document matches (for checker)
 
-db.school.updateMany(
-{ name: "Holberton school" },          // Filter by name
-{ $set: { address: "972 Mission street" } }  // Add or update 'address'
-)
+var result = db.school.updateMany(
+{ name: "Holberton school" },                // Filter
+{ $set: { address: "972 Mission street" } }  // Update
+);
+
+printjson(result);  // Ensures WriteResult is printed
