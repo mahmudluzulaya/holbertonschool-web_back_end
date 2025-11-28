@@ -1,9 +1,5 @@
-// Update all documents with name "Holberton school" and add 'address' field
-// Always outputs WriteResult, even if no document matches (for checker)
-
-var result = db.school.updateMany(
-{ name: "Holberton school" },                // Filter
-{ $set: { address: "972 Mission street" } }  // Update
-);
-
-printjson(result);  // Ensures WriteResult is printed
+// my comment
+db.school.updateMany(
+  { name: "Holberton school" },
+  { $set: { address: "972 Mission street" } }
+)
