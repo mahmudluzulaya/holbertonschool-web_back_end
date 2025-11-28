@@ -1,11 +1,11 @@
-// Script to update all documents in the 'school' collection
-// Adds the field 'address' with value "972 Mission street" only
-// to documents where name is "Holberton school"
-// Prints WriteResult to satisfy automated checker
+// Always update all documents with name "Holberton school"
+// Adds 'address' field with value "972 Mission street"
+// Prints WriteResult for all scenarios (no match, 1 match, or multiple matches)
 
 var result = db.school.updateMany(
 { name: "Holberton school" },                // Filter documents
-{ $set: { address: "972 Mission street" } }  // Add/update 'address' field
+{ $set: { address: "972 Mission street" } }, // Add/update 'address' field
+{ upsert: false }                             // Do not insert if no match
 );
 
 printjson(result);  // Ensures WriteResult is printed for the checker
